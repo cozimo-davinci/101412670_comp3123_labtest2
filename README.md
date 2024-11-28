@@ -22,7 +22,7 @@ To get started with the project, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/weather-forecast-app.git```
+   git clone https://github.com/cozimo-davinci/101412670_comp3123_labtest2.git```
 
 **Navigate to the project directory**:
 
@@ -47,24 +47,6 @@ This app requires an API key from OpenWeather to fetch weather data.
 - In Weather.js and App.js, locate the API_KEY variable and insert your key like this:
     ```const API_KEY = 'your_api_key_here';```
 
-### Project Structure
-
-**The project is structured as follows**:
-
-/weather-forecast-app
-│
-├── /public
-│   └── index.html
-├── /src
-│   ├── /assets
-│   │   ├── weather2.jpg
-│   │   └── weather.jpg
-│   ├── /components
-│   │   └── Weather.js
-│   ├── App.js
-│   ├── index.js
-│   └── tailwind.config.js
-└── package.json
 
 **Key Files**:
 
