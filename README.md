@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# Weather Forecast App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Weather Forecast App**! This is a React-based application that provides real-time weather data and a 5-day forecast for cities around the world using the **OpenWeather API**.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Search for Weather**: Enter any city name to get current weather and forecast data.
+- **Current Weather Data**: Displays temperature, humidity, wind speed, air pressure, and weather description.
+- **5-Day Forecast**: Shows a 5-day weather forecast with temperature and weather icons.
+- **Beautiful Design**: The app is styled using **Tailwind CSS** and includes weather-related images as backgrounds to enhance the user experience.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Axios**: Promise-based HTTP client for making API requests.
+- **OpenWeather API**: A popular API that provides weather data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To get started with the project, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/weather-forecast-app.git```
 
-### `npm run build`
+**Navigate to the project directory**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```cd weather-forecast-app```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Install dependencies**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```npm install```
 
-### `npm run eject`
+**Start the app**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```npm start```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This will run the app in development mode. Open http://localhost:3000 in your browser to view the app.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**API Key Setup**
+This app requires an API key from OpenWeather to fetch weather data.
 
-## Learn More
+- Go to OpenWeather and sign up to get your API key.
+- Replace the API key in the code:
+- In Weather.js and App.js, locate the API_KEY variable and insert your key like this:
+    ```const API_KEY = 'your_api_key_here';```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**The project is structured as follows**:
 
-### Code Splitting
+/weather-forecast-app
+│
+├── /public
+│   └── index.html
+├── /src
+│   ├── /assets
+│   │   ├── weather2.jpg
+│   │   └── weather.jpg
+│   ├── /components
+│   │   └── Weather.js
+│   ├── App.js
+│   ├── index.js
+│   └── tailwind.config.js
+└── package.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Key Files**:
 
-### Analyzing the Bundle Size
+App.js: The main component that handles state management and data fetching.
+Weather.js: The component responsible for displaying weather data and the 5-day forecast.
+tailwind.config.js: Configuration file for Tailwind CSS.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## How It Works
 
-### Making a Progressive Web App
+**App.js**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**State Variables**:
 
-### Advanced Configuration
+city: The current city name entered by the user.
+weatherData: Stores the current weather data fetched from the OpenWeather API.
+forecastData: Stores the 5-day weather forecast data.
+loading: Indicates whether data is being fetched.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**retrieveWeatherData function**:
 
-### Deployment
+This function fetches current weather data and the 5-day forecast data from the OpenWeather API.
+It updates the state with the fetched data.
+If an error occurs, it logs the error and ensures that the loading state is set to false.
+handleSearch function:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This function is called when the user clicks the search button or presses Enter after typing a city name.
 
-### `npm run build` fails to minify
+## Weather.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This component is responsible for displaying the UI elements.
+The user can search for a city, and the component displays the weather and forecast data.
+If data is being fetched, a loading message is shown.
+If no valid data is found, a message prompts the user to try a different city.
+
+**Props**:
+city: The current city being searched.
+weatherData: Current weather data fetched from OpenWeather.
+forecastData: The 5-day weather forecast data.
+loading: Boolean flag to indicate if data is loading.
+handleSearch: A function passed down from App.js to handle the search logic.
+setCity: Function to update the city state in App.js.
+
+## Screenshots
+
+![Initial Screen](src/assets/screenshots/initial_screen.png)
+
+At this screenshot we can see the initial screen with the search bar. It doesn't display any data, since there was not requested the search for a city
+
+![Requested City](/src/assets/screenshots/requested_city_weather.png)
+
+This screenshot illustrates the weather result based on the requested city.
+
+![Postman Request](src/assets/screenshots/postman_request.png)
+
+This screenshot illustrates the result retrieved after sending the request in Postman
+
+
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+OpenWeather API: For providing reliable and free weather data.
+Tailwind CSS: For easy and fast styling.
+React: For building interactive UIs.
